@@ -14,7 +14,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="p-8">
+    <div className="p-8 border-77 border-gray-300 rounded">
     <Header/>
       <BrowserRouter>
         <Routes>

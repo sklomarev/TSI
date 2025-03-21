@@ -11,7 +11,7 @@ class Header extends PureComponent {
 
     render() {
         return (
-            <header className ="flex justify-between items-center p-8 pl-32">
+            <header className ="flex justify-between items-center p-8 pl-32 rounded-lg">
                     <div className="text-lg font-semibold">Lavka</div>
                     <nav className="flex gap-6">
                         <a href="/" className="text-gray-800 hover:text-gray-500">Главная</a>
