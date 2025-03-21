@@ -11,14 +11,35 @@ class Footer extends PureComponent {
 
     render() {
         return (
-            <>
-                <div className="bg-red-500 text-lg">
-                <div>Footer</div>
-                <div><a href='/'>Home</a></div>
-                <div><a href='/About'>About</a></div>
-                <div><a href='/Blog'>Blog</a></div>
+        <footer className="flex justify-between items-start p-8 pl-32">
+            <div className="text-lg font-semibold">Lavka</div>
+            <div className="flex gap-16">
+                <div className="text-center">
+                <h3 className="font-semibold">Группа 1</h3>
+                <ul className="mt-2 space-y-1">
+                    <li><a href="#" className="text-gray-600 hover:text-gray-800">Ссылка 1</a></li>
+                    <li><a href="#" className="text-gray-600 hover:text-gray-800">Ссылка 2</a></li>
+                    <li><a href="#" className="text-gray-600 hover:text-gray-800">Ссылка 3</a></li>
+                </ul>
                 </div>
-            </>
+                <div className="text-center">
+                <h3 className="font-semibold">Группа 2</h3>
+                <ul className="mt-2 space-y-1">
+                    <li><a href="#" className="text-gray-600 hover:text-gray-800">Ссылка 1</a></li>
+                    <li><a href="#" className="text-gray-600 hover:text-gray-800">Ссылка 2</a></li>
+                    <li><a href="#" className="text-gray-600 hover:text-gray-800">Ссылка 3</a></li>
+                </ul>
+                </div>
+                <div className="text-center">
+                <h3 className="font-semibold">Группа 3</h3>
+                <ul className="mt-2 space-y-1">
+                    <li><a href="#" className="text-gray-600 hover:text-gray-800">Ссылка 1</a></li>
+                    <li><a href="#" className="text-gray-600 hover:text-gray-800">Ссылка 2</a></li>
+                    <li><a href="#" className="text-gray-600 hover:text-gray-800">Ссылка 3</a></li>
+                </ul>
+                </div>
+            </div>
+        </footer>
         )
     }
 }

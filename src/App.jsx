@@ -14,17 +14,17 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div className="p-8">
     <Header/>
       <BrowserRouter>
         <Routes>
-          <Route to="/" element={<Home />} />
-          <Route to="/about" element={<About />} />
-          <Route to="/blog" element={<Blog />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </BrowserRouter>
     <Footer/>
-    </>
+    </div>
   )
 }
 
