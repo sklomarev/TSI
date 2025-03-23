@@ -15,7 +15,7 @@ class Home extends PureComponent<Props, State> {
     render(): ReactNode {
         return (
             <>
-                <div className =" p-8 pl-32 border-2 border-gray-300 h-150"> hello</div>
+                <div className ="w-fit p-8 pl-32 border-2 border-gray-300 h-150"> hello</div>
             </>
         )
     }
