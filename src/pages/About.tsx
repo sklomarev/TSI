@@ -1,5 +1,7 @@
 import { PureComponent, ReactNode } from 'react';
 import { Text } from '../components/Text';
+import { Helmet } from 'react-helmet';
+
 
 
 interface AboutProps {
@@ -16,7 +18,13 @@ class About extends PureComponent<AboutProps, AboutState> {
 
   render(): ReactNode {
     return (
+      
       <div className="container mx-auto px-6 py-12 flex flex-col md:flex-row gap-12">
+        <Helmet>
+                    <title>о нас</title>
+                    <meta name="description" content="тиньков олег" />
+                    <meta name="keywords" content="о нет" />
+                </Helmet>
         <div className="md:w-2/3">
           <h1 className="text-4xl font-bold mb-6">О нас</h1>
           
