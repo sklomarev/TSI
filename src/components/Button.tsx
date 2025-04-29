@@ -1,6 +1,15 @@
-import React from "react";
+import { ButtonHTMLAttributes } from "react";
 
-export const Button = ({
+type ButtonSize = "small" | "medium" | "large";
+type ButtonColor = "primary" | "secondary";
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  size?: ButtonSize;
+  color?: ButtonColor;
+  title: string;
+}
+
+export const Button: React.FC<ButtonProps> = ({
   size = "medium",
   color = "primary",
   title,
@@ -49,3 +58,5 @@ export const Button = ({
     </button>
   );
 };
+
+export default Button;

@@ -2,14 +2,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
 
-import Home from './pages/Home.tsx';
-import About from './pages/About.tsx';
-import Blog from './pages/Blog.tsx';
+import Home from './pages/Home';
+import About from './pages/About';
+import Blog from './pages/Blog';
 
-import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-function App() {
+const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -20,20 +20,21 @@ function App() {
       >
         <Header onOpenModal={() => setIsModalOpen(true)} />
         <BrowserRouter>
-          <Routes>
-            <Route 
-              path="/" 
-              element={
-                <Home 
-                  isModalOpen={isModalOpen} 
-                  setIsModalOpen={setIsModalOpen} 
-                />
-              } 
-            />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-          </Routes>
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <Home 
+                isModalOpen={isModalOpen} 
+                setIsModalOpen={setIsModalOpen} 
+              />
+            } 
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
         </BrowserRouter>
+        
         <Footer />
       </div>
     </div>

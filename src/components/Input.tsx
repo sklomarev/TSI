@@ -1,6 +1,19 @@
-import React from "react";
+import { ChangeEvent } from "react";
 
-export const Input = ({ 
+type InputSize = "small" | "medium" | "large";
+type InputColor = "black" | "red";
+
+interface InputProps {
+  size?: InputSize;
+  color?: InputColor;
+  type?: React.HTMLInputTypeAttribute;
+  placeholder?: string;
+  value?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
+}
+
+export const Input: React.FC<InputProps> = ({ 
   size = "medium", 
   color = "black", 
   type = "text", 
@@ -9,13 +22,13 @@ export const Input = ({
   onChange = () => {}, 
   name = "" 
 }) => {
-  const sizeClasses = {
+  const sizeClasses: Record<InputSize, string> = {
     small: "h-8 text-sm px-3",
     medium: "h-10 text-base px-4",
     large: "h-12 text-lg px-5"
   };
 
-  const colorClasses = {
+  const colorClasses: Record<InputColor, string> = {
     black: "border-gray-300 focus:border-black",
     red: "border-red-300 focus:border-red-500"
   };
