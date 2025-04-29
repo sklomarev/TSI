@@ -23,35 +23,32 @@ class About extends PureComponent<Props, State> {
                     <h1 className="text-4xl font-bold mb-6">О нас</h1>
                     
                     <Text size="medium" color="black">
-                        текст<br/>текст<br/>текст<br/>текст<br/>текст<br/>текст<br/>текст<br/>
+                        олег тиньков
                     </Text>
                     <Text size="large" color="red">
-                        текст<br/>
+                        олег тиньков
                     </Text>
                     <div>
                     <h2 className="text-2xl font-semibold mb-4">Связь</h2>
                     <form className="space-y-4">
                         <div className="flex gap-4">
-                        <Input size="medium" color="black" type="text" placeholder="Имя" />
-                        <Input size="medium" color="black" type="text" placeholder="Фамилия" />
                         </div>
                         <div>
-                        <Input size="medium" color="red" type="email" placeholder="mail@mail.ru" />
                         </div>
-                        <Input size="large" color="black" type="text" placeholder="Сообщение" />
-                        <Button size="large" color="primary" title="Отправить" />
-
                     </form>
                     </div>
                 </div>
 
-                <div className="md:w-1/3 flex justify-center">
+                <div className="md:w-1/3 flex justify-center h-100">
                     <img
-                    src="./pic/picture1.jpg"
-                    alt="картиночка"
-                    className="rounded-2xl shadow-lg max-w-xs md:max-w-sm"
+                        src="./Start Sky.jpg"
+                        alt="картиночка"
+                        
+                        className="md:max-w-100 border border-white/45 bg-white rounded-4xl"
+                        style={{ boxShadow: "0px 0px 15px rgba(0, 0, 0, 1)" }}
                     />
                 </div>
+
             </div>
         )
     }

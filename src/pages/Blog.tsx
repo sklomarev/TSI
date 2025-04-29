@@ -14,7 +14,7 @@ class Blog extends PureComponent<Props, State> {
 
     render(): ReactNode {
         return (
-            <div>Hello</div>
+            <div className = "min-h-130 p-8 pl-32">блог </div>
         )
     }
 }
