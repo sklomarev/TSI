@@ -1,4 +1,3 @@
-// AddItemModal.tsx
 import React, { useState } from 'react';
 
 interface AddItemModalProps {
@@ -15,7 +14,7 @@ const AddItemModal: React.FC<AddItemModalProps> = ({ onAdd, onClose }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onAdd(newItem);  // Передаем данные о новом товаре в родительский компонент
+    onAdd(newItem); 
   };
 
   return (

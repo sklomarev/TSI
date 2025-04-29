@@ -1,30 +1,48 @@
-import { PureComponent, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 
-interface BlogProps {
-  // Define your props interface here if needed
-  className?: string;
-  children?: ReactNode;
+interface Product {
+  id: number;
+  title: string;
+  message: string;
 }
 
-interface BlogState {
-  // Define your state interface here if needed
-}
+const Blog = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
-class Blog extends PureComponent<BlogProps, BlogState> {
-  constructor(props: BlogProps) {
-    super(props);
-    this.state = {};
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/data');
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке данных:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>Загрузка...</div>;
   }
 
-  render(): ReactNode {
-    const { className = '', children } = this.props;
-
-    return (
-      <div className={`min-h-[130px] p-8 pl-32 ${className}`}>
-        {children || 'блог'}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-4">Продукты</h1>
+      <ul className="space-y-2">
+        {products.map(product => (
+          <li key={product.id} className="p-4 border rounded">
+            <h2 className="font-semibold">{product.title}</h2>
+            <p>{product.message}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default Blog;

@@ -1,11 +1,9 @@
 import { PureComponent } from 'react';
 
 interface FooterProps {
-  // Здесь можно добавить пропсы, если они понадобятся
 }
 
 interface FooterState {
-  // Здесь можно добавить состояние, если оно понадобится
 }
 
 class Footer extends PureComponent<FooterProps, FooterState> {

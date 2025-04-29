@@ -7,7 +7,7 @@ interface TextProps {
   size?: TextSize;
   color?: TextColor;
   children: ReactNode;
-  className?: string; // Optional additional className
+  className?: string;
 }
 
 export const Text: React.FC<TextProps> = ({
@@ -23,12 +23,12 @@ export const Text: React.FC<TextProps> = ({
     colors: {
       black: "text-black italic",
       red: "text-red-500",
-    } as Record<TextColor, string>, // Ensures all colors are covered
+    } as Record<TextColor, string>,
     sizes: {
       small: "text-sm",
       medium: "text-base",
       large: "text-xl",
-    } as Record<TextSize, string>, // Ensures all sizes are covered
+    } as Record<TextSize, string>,
   };
 
   return (

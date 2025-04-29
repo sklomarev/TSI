@@ -1,4 +1,3 @@
-// Home.tsx
 import { PureComponent } from 'react';
 import ItemList from '../components/ItemList';
 import AddItemModal from '../components/AddItemModal';
@@ -50,12 +49,11 @@ class Home extends PureComponent<HomeProps, HomeState> {
   render() {
     const { items } = this.state;
     const { isModalOpen, setIsModalOpen } = this.props;
-
+    
     return (
       <div className="container mx-auto p-8 pb-16">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold">Каталог товаров</h1>
-          {/* Используем компонент Button вместо обычной кнопки */}
           <Button
             onClick={() => setIsModalOpen(true)}
             size="large"

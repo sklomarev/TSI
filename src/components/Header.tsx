@@ -1,4 +1,3 @@
-// Header.tsx
 import { PureComponent } from 'react';
 
 interface HeaderProps {
@@ -16,7 +15,6 @@ class Header extends PureComponent<HeaderProps> {
           <a href="/about" className="hover:text-white">О нас</a>
           <a href="/blog" className="hover:text-white">Блог</a>
         </nav>
-        {/* Удаляем старую кнопку и используем Button */}
       </header>
     );
   }

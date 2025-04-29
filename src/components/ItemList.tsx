@@ -2,7 +2,6 @@ interface Item {
   title: string;
   description: string;
   price: number | string;
-  // Add other item properties if needed
 }
 
 interface ItemListProps {

@@ -3,11 +3,9 @@ import { Text } from '../components/Text';
 
 
 interface AboutProps {
-  // Define your props interface here if needed
 }
 
 interface AboutState {
-  // Define your state interface here if needed
 }
 
 class About extends PureComponent<AboutProps, AboutState> {
@@ -32,12 +30,9 @@ class About extends PureComponent<AboutProps, AboutState> {
           <div>
             <h2 className="text-2xl font-semibold mb-4">Связь</h2>
             <form className="space-y-4">
-              {/* Add form fields here when needed */}
               <div className="flex gap-4">
-                {/* Form content goes here */}
               </div>
               <div>
-                {/* Additional form content goes here */}
               </div>
             </form>
           </div>
@@ -50,7 +45,7 @@ class About extends PureComponent<AboutProps, AboutState> {
             className="md:max-w-full border border-white/45 bg-white rounded-4xl object-cover h-full"
             style={{ 
               boxShadow: "0px 0px 15px rgba(0, 0, 0, 1)",
-              maxHeight: "500px" // Added for better image control
+              maxHeight: "500px"
             }}
           />
         </div>
