@@ -4,16 +4,19 @@ import cors from 'cors';
 const app = express();
 const PORT = 5000;
 
+// Middleware
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); // Встроенный парсер JSON
 
+// Initial data
 let products = [
-  { id: 1, title: "продукт1", message: "Описание" },
-  { id: 2, title: "продукт 2", message: "Описание" }
+  { id: 1, title: "Продукт 1", description: "Описание 1", price: 100 },
+  { id: 2, title: "Продукт 2", description: "Описание 2", price: 200 }
 ];
 
+// Routes
 app.get('/', (req, res) => {
-  res.send('Сервер работает. /api/data');
+  res.send('Сервер работает. Перейдите на /api/data для получения данных.');
 });
 
 app.get('/api/data', (req, res) => {
@@ -23,12 +26,22 @@ app.get('/api/data', (req, res) => {
 app.post('/api/data', (req, res) => {
   const newProduct = {
     id: products.length + 1,
-    ...req.body
+    title: req.body.title,
+    description: req.body.description,
+    price: req.body.price,
+    createdAt: new Date().toISOString()
   };
   products.push(newProduct);
   res.status(201).json(newProduct);
 });
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Что-то сломалось!');
+});
+
+// Start server
 app.listen(PORT, () => {
   console.log(`Сервер запущен на http://localhost:${PORT}`);
 });
